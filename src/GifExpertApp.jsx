@@ -7,12 +7,17 @@ export const GiftExpertApp = () => {
     "Dragon Ball",
   ]);
 
+  const onAddCategory = () => {
+    setCategories([...categories, "HunterXHunter"]);
+  };
+
   console.log(categories);
 
   return (
     <div>
       {/*Titulo*/}
       <h2>GiftExpertApp</h2>
+      <button onClick={onAddCategory}>Agregar</button>
       {/*Input*/}
 
       {/*Listado de Cateogorias*/}
