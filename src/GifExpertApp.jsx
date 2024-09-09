@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { AddCategory } from "./components/AddCategory";
 
 export const GiftExpertApp = () => {
   const [categories, setCategories] = useState([
@@ -8,7 +9,7 @@ export const GiftExpertApp = () => {
   ]);
 
   const onAddCategory = () => {
-    setCategories([...categories, "HunterXHunter"]);
+    setCategories(["HunterXHunter", ...categories]);
   };
 
   console.log(categories);
@@ -19,7 +20,7 @@ export const GiftExpertApp = () => {
       <h2>GiftExpertApp</h2>
       <button onClick={onAddCategory}>Agregar</button>
       {/*Input*/}
-
+      <AddCategory />
       {/*Listado de Cateogorias*/}
       <ol>
         {categories.map((category) => (
