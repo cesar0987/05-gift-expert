@@ -1,12 +1,18 @@
 import { useState } from "react";
 
-export const AddCategory = () => {
-  const [inputValue, setInputValue] = useState("One Punch");
+export const AddCategory = ({ onNewCategory }) => {
+  const [inputValue, setInputValue] = useState("");
   const handleInputChange = (e) => {
     setInputValue(e.target.value);
   };
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (inputValue.trim().length <= 2) {
+      return;
+    }
+    //setCategories((categories) => [inputValue, ...categories]);
+    onNewCategory(inputValue.trim());
+    setInputValue("");
     console.log("Submit hecho");
   };
 

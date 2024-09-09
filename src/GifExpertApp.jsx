@@ -8,8 +8,8 @@ export const GiftExpertApp = () => {
     "Dragon Ball",
   ]);
 
-  const onAddCategory = () => {
-    setCategories(["HunterXHunter", ...categories]);
+  const onAddCategory = (newCategory) => {
+    //setCategories(["HunterXHunter", ...categories]);
   };
 
   console.log(categories);
@@ -20,7 +20,10 @@ export const GiftExpertApp = () => {
       <h2>GiftExpertApp</h2>
       <button onClick={onAddCategory}>Agregar</button>
       {/*Input*/}
-      <AddCategory />
+      <AddCategory
+        //setCategories={setCategories}
+        onNewCategory={(value) => onAddCategory(value)}
+      />
       {/*Listado de Cateogorias*/}
       <ol>
         {categories.map((category) => (
